@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>May sasabihin ako...</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, #ffd8e4 0%, transparent 35%),
+        linear-gradient(135deg, #fff4f7, #ffe8ef);
+      color: #2d1f25;
+    }
+
+    .card {
+      width: min(92vw, 430px);
+      padding: 30px 24px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.92);
+      border: 2px solid #ffc3d4;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(92, 35, 55, 0.18);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.7rem, 6vw, 2.35rem);
+    }
+
+    p {
+      margin: 0 0 22px;
+      font-size: 1.08rem;
+      line-height: 1.5;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: white;
+      background: #e84371;
+      box-shadow: 0 8px 20px rgba(232, 67, 113, 0.3);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 11px 24px rgba(232, 67, 113, 0.38);
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    #punchSection {
+      display: none;
+    }
+
+    #punchSection.show {
+      display: block;
+      animation: popIn 0.45s ease;
+    }
+
+    .gif {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 18px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(30, 20, 24, 0.2);
+    }
+
+    .small {
+      margin-bottom: 0;
+      color: #76515f;
+      font-size: 0.92rem;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.88);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <section id="introSection">
+      <h1>Sino yan boss?</h1>
+      <button id="revealButton" type="button">
+        Click mo nga 😇
+      </button>
+    </section>
+
+    <section id="punchSection">
+      <img
+        class="gif"
+        src="cat-punch.gif"
+        alt="A cat doing playful punching motions"
+      />
+
+      <h1>bitchass</h1>
+      <p>suntukan kamo  kami</p>
+    </section>
+  </main>
+
+  <script>
+    const revealButton = document.getElementById("revealButton");
+    const introSection = document.getElementById("introSection");
+    const punchSection = document.getElementById("punchSection");
+
+    revealButton.addEventListener("click", function () {
+      introSection.style.display = "none";
+      punchSection.classList.add("show");
+    });
+  </script>
+</body>
+</html>
